@@ -1,0 +1,56 @@
+ARG BUILD_FROM=hassioaddons/base:8.0.3
+FROM ${BUILD_FROM}
+
+ENV LANG C.UTF-8
+
+RUN apk update
+RUN apk add --no-cache --virtual .build-deps alpine-keys bash automake make git rsync tar gcc g++ \
+	binutils libgcc libstdc++ libgfortran readline readline-dev python3-dev dev86 m4 libtool autoconf swig \
+	linux-headers build-base \
+	&& apk add --no-cache libftdi1-dev libusb libusb-dev \
+	&& git clone https://github.com/owfs/owfs /owfs-code \
+	&& cd /owfs-code \
+	&& git pull \
+	&& ./bootstrap \
+	&& ./configure \
+		--disable-owftpd \
+		--disable-owexternal \
+		--disable-ownet \
+		--disable-owcapi \
+		--disable-owperl \
+		--disable-owphp \
+		--disable-owpython \
+		--disable-owtcl \
+		--disable-owtap \
+		--disable-owmon \
+		--disable-owfs \
+		--disable-zero \
+		--disable-avahi \
+		--disable-debug \
+		--enable-owserver \
+		--enable-owhttpd \
+		--enable-ftdi \
+		--enable-usb \
+		--enable-owshell \
+	&& make && make install \
+	&& cd / && rm -rf /owfs-code && apk del .build-deps
+	
+# Copy data for add-on
+COPY rootfs /
+
+# Build arguments
+ARG BUILD_ARCH
+ARG BUILD_DATE
+ARG BUILD_REF
+ARG BUILD_VERSION
+
+ENV PATH="/opt/owfs/bin:${PATH}"
+
+# Labels
+LABEL \
+    io.hass.name="owserver" \
+    io.hass.description="onewire server to read 1-Wire devices" \
+    io.hass.arch="${BUILD_ARCH}" \
+    io.hass.type="addon" \
+    io.hass.version=${BUILD_VERSION} \
+    maintainer="Łukasz Rybak <lukasz.rybak@gmail.com>"
