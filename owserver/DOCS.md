@@ -1,4 +1,4 @@
-# onewire2mqtt
+# owserver
 
 The addon provide owserver to read 1-Wire devices over DS2480B-based bus master serial device
 
