@@ -1,4 +1,4 @@
-ARG BUILD_FROM=hassioaddons/base:8.0.3
+ARG BUILD_FROM=hassioaddons/base:8.0.6
 FROM ${BUILD_FROM}
 
 ENV LANG C.UTF-8
@@ -8,7 +8,7 @@ RUN apk add --no-cache --virtual .build-deps alpine-keys bash automake make git 
 	binutils libgcc libstdc++ libgfortran readline readline-dev python3-dev dev86 m4 libtool autoconf swig \
 	linux-headers build-base \
 	&& apk add --no-cache libftdi1-dev libusb libusb-dev \
-	&& git clone https://github.com/owfs/owfs /owfs-code \
+	&& git clone --single-branch --branch v3.2p4 --depth 1 https://github.com/owfs/owfs /owfs-code \
 	&& cd /owfs-code \
 	&& git pull \
 	&& ./bootstrap \
