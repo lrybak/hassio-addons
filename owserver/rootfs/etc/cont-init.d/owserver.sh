@@ -1,5 +1,6 @@
 #!/usr/bin/with-contenv bashio
 
+
 declare device
 device=$(bashio::config 'device')
 
