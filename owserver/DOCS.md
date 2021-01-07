@@ -16,6 +16,7 @@ device: ''
 ### Option: `owhttpd`
 
 Enable to start the embedded owhttpd server (Default false).
+owhttpd server is exposed via **Ingress (Open Web UI)**
 
 ### Option: `device`
 
@@ -23,12 +24,9 @@ Specify DS2480B-based bus master.
 To can find your device go to **Supervisor** -> **System** -> **Host System** -> click three dots -> **Hardware**
 Keep it empty '' to mock with FAKE device
 
-## Network
-
-Map TCP port of owhttpd server on your host system (Default 2121)
 
 ## Home Assistant integration
 
 1. Configure and start addon. With default configuration addon starts with fake (mocked) devices.
-1. Add to Home Assistant through the Integrations. Go to Integrations, Add Integration, Choose 1-Wire, Connection type: OWServer, Host: 9910c4be-owserver, Port 4304 (default).
-1. That's it. On the integrations page wou will find 1-Wire integration with discovered devices.
+2. Add to Home Assistant through the Integrations. Go to Integrations, Add Integration, Choose 1-Wire, Connection type: OWServer, Host: 9910c4be-owserver, Port 4304 (default).
+3. That's it. On the integrations page wou will find 1-Wire integration with discovered devices.

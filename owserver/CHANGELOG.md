@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.1.3
+
+- Adds Ingress support
+
 ## 0.1.2
 
 - Upgrades owserver to v3.2p4
