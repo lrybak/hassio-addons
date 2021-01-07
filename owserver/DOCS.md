@@ -15,7 +15,7 @@ device: ''
 
 ### Option: `owhttpd`
 
-Enable to start the embedded owhttpd server (Default false).
+Enable to start the embedded owhttpd server (Default true).
 owhttpd server is exposed via **Ingress (Open Web UI)**
 
 ### Option: `device`
