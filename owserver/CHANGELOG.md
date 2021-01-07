@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.1.4
+
+- Fix links in Ingress
+- Add panel icon
+- run owhttpd in read only mode
+
 ## 0.1.3
 
 - Adds Ingress support
