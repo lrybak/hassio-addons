@@ -19,7 +19,9 @@ Enable to start the embedded owhttpd server (Default false).
 
 ### Option: `device`
 
-Specify DS2480B-based bus master. Keep it empty '' to mock with FAKE device.
+Specify DS2480B-based bus master. 
+To can find your device go to **Supervisor** -> **System** -> **Host System** -> click three dots -> **Hardware**
+Keep it empty '' to mock with FAKE device
 
 ## Network
 
