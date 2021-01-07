@@ -10,7 +10,7 @@
   "boot": "auto",  
   "auto_uart": true,
   "options": {
-		"owhttpd": false,
+		"owhttpd": true,
 		"device": ""
   },
   "schema": {
