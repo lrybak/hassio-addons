@@ -21,4 +21,4 @@ This addon provides you owserver instance to read 1-Wire devices over DS2480B-ba
 Please check the **[documentation](https://github.com/lrybak/hassio-addons/blob/master/owserver/DOCS.md)** page.
 
 
-[version]: https://img.shields.io/badge/version-v0.1.3-blue.svg
+[version]: https://img.shields.io/badge/version-v0.1.4-blue.svg
