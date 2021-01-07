@@ -19,5 +19,6 @@
   },
   "hassio_role": "default",
   "hassio_api": true,
-  "ingress": true
+  "ingress": true,
+  "panel_icon": "mdi:alpha-w-box"
 }
