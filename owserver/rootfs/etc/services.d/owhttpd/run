@@ -5,6 +5,6 @@ if bashio::config.true 'owhttpd' ;then
     if ! pgrep -x "/opt/owfs/bin/owhttpd" > /dev/null
     then
         bashio::log.info "Starting owhttpd..."
-        exec /opt/owfs/bin/owhttpd -c /etc/owfs.conf
+        exec /opt/owfs/bin/owhttpd -r -c /etc/owfs.conf
     fi
 fi
