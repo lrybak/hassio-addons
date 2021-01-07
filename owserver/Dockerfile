@@ -11,6 +11,13 @@ RUN apk add --no-cache --virtual .build-deps alpine-keys bash automake make git 
 	&& git clone --single-branch --branch v3.2p4 --depth 1 https://github.com/owfs/owfs /owfs-code \
 	&& cd /owfs-code \
 	&& git pull \
+	&& sed -i "s/A HREF='%\.\*s'/A HREF='.\/.\/.\/.\/'/gI" /owfs-code/module/owhttpd/src/c/owhttpd_dir.c \
+	&& sed -i "s/A HREF='%s'/A HREF='.%s'/gI" /owfs-code/module/owhttpd/src/c/owhttpd_dir.c \
+	&& sed -i "s/A HREF='\/'/A HREF='.\/.\/.\/.\/'/gI" /owfs-code/module/owhttpd/src/c/owhttpd_dir.c \
+	&& sed -i "s/A HREF='%\.\*s'/A HREF='.\/.\/.\/.\/'/gI" /owfs-code/module/owhttpd/src/c/owhttpd_read.c \
+	&& sed -i "s/A HREF='%s'/A HREF='.%s'/gI" /owfs-code/module/owhttpd/src/c/owhttpd_read.c \
+	&& sed -i "s/A HREF='\/uncached/A HREF='.\/uncached/gI" /owfs-code/module/owhttpd/src/c/owhttpd_read.c \
+	&& sed -i "s/A HREF='\/'/A HREF='.\/.\/.\/.\/'/gI" /owfs-code/module/owhttpd/src/c/owhttpd_present.c \
 	&& ./bootstrap \
 	&& ./configure \
 		--disable-owftpd \
