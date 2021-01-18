@@ -1,5 +1,9 @@
 # Changelog
 
+## 0.2.0
+
+- Upgrades addon-base to 9.0.0
+
 ## 0.1.4
 
 - Fix links in Ingress
