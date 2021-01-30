@@ -3,7 +3,7 @@
   "version": "stable",
   "slug": "owserver",
   "description": "onewire server to read 1-Wire devices",
-  "url": "https://github.com/lrybak/hassio-owserver",
+  "url": "https://github.com/lrybak/addon-owserver",
   "startup": "system",
   "init": false,
   "arch": ["aarch64", "amd64", "armhf", "armv7"],
